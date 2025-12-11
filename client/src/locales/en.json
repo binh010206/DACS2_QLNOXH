@@ -1,0 +1,15 @@
+{
+  "header": {
+    "home": "Home",
+    "project": "Projects",
+    "news": "News",
+    "contact": "Contact",
+    "login": "Login",
+    "subtitle": "OFFICIAL PORTAL"
+  },
+  "hero": {
+    "title": "GREEN LIVING SPACE",
+    "sub": "International Standard",
+    "btn": "Explore Now"
+  }
+}
