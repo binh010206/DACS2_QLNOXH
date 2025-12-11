@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
-
-// --- SỬA LẠI DÒNG NÀY (Dùng ../ thay vì ../../) ---
 const db = require("../config/db"); 
 
 // Gọi file tính điểm (nếu có)

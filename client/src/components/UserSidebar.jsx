@@ -10,20 +10,16 @@ const UserSidebar = () => {
     // Dùng State để cập nhật lại giao diện khi có thay đổi
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || { name: 'Cư dân', avatar: '' });
 
-    // --- LOGIC TỰ ĐỘNG ĐỒNG BỘ AVATAR ---
+    // --- ĐỒNG BỘ AVATAR ---
     useEffect(() => {
-        // Hàm đọc lại dữ liệu mới nhất
         const updateUserData = () => {
             const updatedUser = JSON.parse(localStorage.getItem('user'));
             if (updatedUser) {
                 setUser(updatedUser);
             }
-        };
-
-        // Lắng nghe sự kiện 'storage' (khi Profile bắn tín hiệu)
+        };     
         window.addEventListener('storage', updateUserData);
         
-        // Cleanup khi component bị hủy
         return () => window.removeEventListener('storage', updateUserData);
     }, []);
 
@@ -39,18 +35,15 @@ const UserSidebar = () => {
         { path: '/user/dashboard', name: 'Tổng quan', icon: 'bi-grid-fill' },
         { path: '/user/profile', name: 'Hồ sơ cá nhân', icon: 'bi-person-badge-fill' },
         { path: '/user/contracts', name: 'Hợp đồng thuê', icon: 'bi-file-earmark-text-fill' },
-        { path: '/user/bills', name: 'Hóa đơn & Thanh toán', icon: 'bi-receipt' },
+        // { path: '/user/bills', name: 'Hóa đơn & Thanh toán', icon: 'bi-receipt' },
         { path: '/user/requests', name: 'Gửi phản ánh', icon: 'bi-chat-dots-fill' },
     ];
 
     return (
         <div className="d-flex flex-column p-3 h-100 position-relative text-white" style={{ width: '280px', overflow: 'hidden' }}>
-            
-            {/* NỀN SIDEBAR */}
+                        
             <div className="sidebar-background"></div>
             <div className="sidebar-overlay"></div>
-
-            {/* LOGO */}
             <div className="position-relative z-2 mb-4 text-center mt-2">
                 <Link to="/user" className="text-decoration-none">
                     <img 
@@ -61,11 +54,9 @@ const UserSidebar = () => {
                     <h5 className="fw-bold m-0 text-white ls-1">DEKA RESIDENT</h5>
                 </Link>
             </div>
-            
-            {/* --- INFO USER (ĐÃ CẬP NHẬT HIỂN THỊ ẢNH) --- */}
+
             <div className="position-relative z-2 mb-4 p-3 glass-card rounded-4 d-flex align-items-center">
                 <div className="position-relative me-3">
-                    {/* Nếu có Avatar thì hiện Ảnh, không thì hiện Icon */}
                     {user.avatar ? (
                         <img 
                             src={user.avatar} 
@@ -79,7 +70,6 @@ const UserSidebar = () => {
                         </div>
                     )}
                     
-                    {/* Chấm xanh online */}
                     <span className="position-absolute bottom-0 end-0 p-1 bg-success border border-2 border-white rounded-circle"></span>
                 </div>
                 
@@ -93,7 +83,6 @@ const UserSidebar = () => {
 
             <hr className="position-relative z-2 opacity-25 my-1"/>
 
-            {/* MENU */}
             <Nav className="flex-column mb-auto gap-2 position-relative z-2 mt-3">
                 {menus.map((menu, idx) => {
                     const isActive = location.pathname === menu.path;

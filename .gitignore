@@ -1,0 +1,9 @@
+# Chặn tất cả thư mục node_modules, dù nằm ở thư mục con nào
+node_modules/
+**/node_modules/
+
+# Chặn file môi trường và build
+.env
+.env.local
+dist/
+build/

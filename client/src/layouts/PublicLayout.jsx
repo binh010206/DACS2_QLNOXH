@@ -1,7 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
-// Import logo (Lùi 1 cấp ra src -> vào assets)
 import logoDeka from '../assets/deka-logo.jpg'; 
 
 const PublicLayout = () => {
@@ -9,19 +8,15 @@ const PublicLayout = () => {
         <div className="d-flex flex-column min-vh-100 bg-light">
             <Header />
             
-            {/* Nội dung chính các trang con sẽ hiện ở đây */}
             <main className="flex-grow-1">
                 <Outlet />
             </main>
 
-            {/* FOOTER DEKA BUILDING */}
             <footer className="bg-dark text-white py-5 mt-auto" style={{borderTop: '4px solid #0d6efd'}}>
                 <div className="container">
                     <div className="row">
-                        {/* Cột 1: Logo & Giới thiệu */}
                         <div className="col-md-4 mb-4">
                             <div className="d-flex align-items-center mb-3">
-                                {/* Logo nền trắng nhỏ */}
                                 <img src={logoDeka} alt="Logo" height="50" className="bg-white rounded p-1 me-3" />
                                 <div>
                                     <h5 className="text-primary fw-black m-0 text-uppercase" style={{letterSpacing:'1px'}}>DEKA BUILDING</h5>
@@ -33,7 +28,6 @@ const PublicLayout = () => {
                             </p>
                         </div>
 
-                        {/* Cột 2: Liên hệ (Khớp với trang Liên hệ) */}
                         <div className="col-md-4 mb-4">
                             <h6 className="fw-bold text-warning mb-3 text-uppercase">Thông Tin Liên Hệ</h6>
                             <ul className="list-unstyled small text-white-50">
@@ -56,7 +50,6 @@ const PublicLayout = () => {
                             </ul>
                         </div>
 
-                        {/* Cột 3: Đăng ký nhận tin (Giao diện) */}
                         <div className="col-md-4">
                             <h6 className="fw-bold text-info mb-3 text-uppercase">Đăng Ký Nhận Tin</h6>
                             <p className="small text-white-50">Nhận thông báo mới nhất về các dự án mở bán và chính sách vay vốn.</p>

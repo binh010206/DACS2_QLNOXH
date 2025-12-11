@@ -71,7 +71,7 @@ const Sidebar = () => {
                     </NavLink>
                 </Nav.Item>
 
-                {/* --- 2 NÚT BẠN CẦN THÊM --- */}
+                
                 <Nav.Item>
                     <NavLink to="/admin/contracts" className="nav-link text-white d-flex align-items-center px-3 py-3 rounded-3 sidebar-link">
                         <i className="bi bi-file-earmark-check-fill me-3 fs-5"></i> Hợp đồng

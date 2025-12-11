@@ -9,13 +9,13 @@ const ApartmentManager = () => {
     
     // --- PHÂN TRANG ---
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 8; // Số lượng căn hộ mỗi trang (8 căn = 2 hàng)
+    const itemsPerPage = 8; 
 
     // State Modal
     const [showModal, setShowModal] = useState(false);
     const [isEdit, setIsEdit] = useState(false);
     
-    // Form dữ liệu (Khớp 100% Database)
+    // Form dữ liệu 
     const [currentApt, setCurrentApt] = useState({
         ten_du_an: '', ten_can_ho: '', dia_chi_du_an: '', 
         khu_vuc: 'Liên Chiểu', hinh_anh: '',

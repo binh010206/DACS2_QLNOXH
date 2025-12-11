@@ -39,10 +39,10 @@ const ContractManager = () => {
         });
     };
 
-    // 3. XỬ LÝ IN HỢP ĐỒNG (LẤY DATA TỪ DB ĐIỀN VÀO MẪU)
+    // 3. XỬ LÝ IN HỢP ĐỒNG 
     const handlePrint = (c) => {
         const printWindow = window.open('', '_blank');
-        // Nội dung HTML mẫu hợp đồng chuẩn
+        
         printWindow.document.write(`
             <html>
             <head>
